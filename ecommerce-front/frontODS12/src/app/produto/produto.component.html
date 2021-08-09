@@ -1,0 +1,104 @@
+<div class="container">
+    <div class="d-flex align-items-start">
+        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <button class="nav-link active mt-5" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Poste meu lixo</button>
+
+          <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Meus lixos</button>
+
+          <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Lixos retirados</button>
+
+          <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+        </div>
+
+        <!-- POSTE MEU LIXO -->
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="row ">
+                    <div class="col d-flex flex-column align-items-center m-5">
+                        <h1 class="m-2 fs-54">Lixo</h1>
+                        
+                        <input class="m-2" type="text" name="imagem" id="imagem" placeholder="imagem">
+
+                        <input [(ngModel)]='produto.status' class="m-2" type="text" name="text" id="status" placeholder="status">
+
+                        <input [(ngModel)]='produto.endereco' class="m-2" type="text" name="endereco" id="endereco" placeholder="endereco">
+
+                        <input [(ngModel)]='produto.dataRetirada' class="m-2" type="date" name="dataRetirada" id="dataRetirada" placeholder="dataRetirada">
+
+                        <input [(ngModel)]='produto.descricao' class="m-2" type="text" name="descricao" id="descricao" placeholder="descrição">
+
+                        <input [(ngModel)]='produto.quantidade' class="m-2" type="number" name="quantidade" id="quantidade" placeholder="quantidade">
+
+
+                        <div>
+                          <label for="categoria">Categoria</label>
+                          <select name="categoria" id="categoria">
+                            
+                            <option *ngFor='let item of listaCategoria' value="{{item.id}}">
+                              {{item.residuo}}
+                            </option>
+                            
+                            
+                          </select>
+                        </div>
+
+
+
+
+                        
+                      
+                        <button  class="btn btn-warning text-white" type="submit" (click)='cadastrar()'>Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+
+
+          <!-- MEUS LIXOS -->
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <div class="row mt-5">
+                <div class="col">
+                    <h2>Todos os Lixos</h2>
+                </div>
+            </div>
+        
+            <div class="row mt-3 mb-5 d-flex justify-content-center">
+                <div class="col-md-6">
+                    <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Imagem</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col" class="">Quantidade</th>
+                            <th scope="col" class="">Categoria</th>
+                            <th scope="col" class="">Mensagem</th>
+                            <th scope="col" class="">Configuração</th>
+              
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor = 'let item of listaProdutos'>
+                            <th>{{item.idProduto}}</th>
+                            <td>{{item.descricao}}</td>
+                            <th>{{item.quantidade}}</th>
+                            <td>8</td>
+                            <td>Deixando uma mensagem</td>
+                            <td class="d-flex justify-content-end">
+                              <button class="btn btn-info me-3" >Editar</button>
+                              <button class="btn btn-danger" >Apagar</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                </div>
+            </div>
+          </div>
+
+
+          <!-- LIXOS RETIRADOS -->
+          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+          
+          <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+        </div>
+      </div>
+</div>

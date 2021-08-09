@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6 ">
+            <p class="text-center mt-3">Cadastre um Residuo</p>
+            <div class="form-group w-50">
+                <div class="mb-3 ">
+                    <label for="residuo" class="form-label">Residuo</label>
+                    <input [(ngModel)]="lixo.residuo" type="text" class="form-control" id="residuo" name="residuo">
+                </div>
+                <div class="mb-3">
+                    <label for="preco" class="form-label">Preço</label>
+                    <input [(ngModel)]="lixo.preco" type="text" class="form-control" id="preco" name="preco">
+                </div>
+                <button (click)="cadastrar()" type="submit" class="btn btn-primary mb-3">Cadastrar</button>
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="row mt-5">
+                <h2 class="text-center">Todos os Residuos</h2>
+            </div>
+            <div class="col-md-12">
+                <table class="table caption-top table-dark table-sm table-hover">
+                    <caption>vai pelo amor de deus</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Residuo</th>
+                            <th scope="col">Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let item of listaLixo'>
+                            <th>{{item.id}}</th>
+                            <td>{{item.residuo}}</td>
+                            <td>{{item.preco}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-light teste">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto d-flex align-items-center justify-content-center">
+                <li class="nav-item pe-5  ">
+                    <a class="">
+                        <p class="m-0 text-white fs-16" routerLink='/inicio'>Inicio</p>
+                    </a>
+                </li>
+                <li class="nav-item pe-5">
+                    <a>
+                        <p class="m-0 text-white fs-16" routerLink='/sobre'>Sobre</p>
+                    </a>
+                </li>
+
+                <li class="nav-item pe-5">
+                    <a>
+                        <p class="m-0 text-white fs-16" routerLink='/contato'>Contato</p>
+                    </a>
+                </li>
+
+                <ng-container *ngIf="auth.logado();">
+                    <li class="nav-item pe-5">
+                        <a>
+                            <p class="m-0 text-white fs-16" routerLink='produto'>Produto</p>
+                        </a>
+                    </li>
+                </ng-container>
+
+                <ng-container *ngIf="auth.logado();">
+                    <li class="nav-item pe-5">
+                        <a>
+                            <p class="m-0 text-white fs-16" routerLink="/categoria">Categoria</p>
+                        </a>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+        <ng-container *ngIf="auth.logado(); else elseTemplate">
+            <ul class="navbar-nav ml-auto d-flex align-items-center pe-2,5 ">
+                <li class="nav-item fa-lg text-white ">
+                    <a (click)="sair()">
+                        <p routerLink='/inicio' class="m-0 text-white fs-16"> Sair
+                        </p>
+                    </a>
+                </li>
+            </ul>
+
+        </ng-container>
+
+        <ng-template #elseTemplate>
+            <ul class="navbar-nav ml-auto d-flex align-items-center pe-2,5 ">
+                <li class="nav-item fa-lg text-white ">
+                    <a>
+                        <p routerLink='/cadastro' class="m-0 text-white fs-16"> Entrar | Cadastrar
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </ng-template>
+    </div>
+</nav>

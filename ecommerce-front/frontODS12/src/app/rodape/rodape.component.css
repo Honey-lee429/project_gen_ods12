@@ -1,0 +1,33 @@
+.teste{
+    background-color: #001d3d;
+}
+
+ul.social-network{
+    list-style: none;
+    padding: 0;
+}
+
+ul.social-network li{
+    display: inline;
+    margin: 0;
+    padding: 5px;
+}
+
+.fab{
+    font-size: 35pt;
+    color: white;
+    padding: 10px;
+}
+
+.fa-facebook:hover{
+    color: #3b5998;
+}
+
+.fa-instagram:hover{
+    color: #C13584;
+}
+
+.bg-copyright {
+    background-color: #E5F2D8;
+}
+

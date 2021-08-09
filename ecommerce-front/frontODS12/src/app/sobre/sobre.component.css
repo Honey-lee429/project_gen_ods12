@@ -1,0 +1,30 @@
+.bg-canudo {
+    background-image: url(../../assets/img/canudo.jpg);
+    background-size:cover;
+    height: 150vh; 
+    width:fit-content;
+}
+
+.sobre {
+    display: flex;
+    text-align: center;
+    width: 70%; 
+    margin: auto;
+    background-color: #1b532e;
+}
+
+h1, h3, p {
+    margin: 20px;
+    line-height: 2rem;
+}
+
+.bg-missao {
+    background-color: #1b532e;
+    padding: 70px;
+}
+
+.missao {
+    margin: auto;
+    background-color: #E5F2D8;
+    width: 70%;
+}

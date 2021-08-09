@@ -1,0 +1,9 @@
+.mb{
+  margin-bottom: 70px;
+}
+
+.posicionamento {
+  margin-top: calc(454px / 2 - 30px);
+  margin-left: 20px;
+  margin-right: 20px;
+};
